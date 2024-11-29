@@ -50,21 +50,19 @@ mod example3 {
     }
 
     // Winning answer gets validated and stored in the question PDA
-    pub fn tally(ctx: Context<Tally>) -> Result<()> {   
+    pub fn tally<'info>(ctx: Context<'_, '_ , 'info ,'info, Tally>) -> Result<()> {
 
-        let question: &mut Account<Question> = &mut ctx.accounts.question;        
+        let question: &mut Account<Question> = &mut ctx.accounts.question;
+        let mut winner: (u32, u8) = (0,0);
 
-        // All of the acounts not explicitely mentioned in the Tally context
-        let answers: Vec<AccountInfo> = ctx.remaining_accounts.to_vec();
-        let mut winner: (u32, u8) = (0,0);            
-
-        msg!("Receieved {:?} answers accounts",answers.len());
+        msg!("Receieved {:?} answers accounts",ctx.remaining_accounts.len());
 
         // Check that accounts passed is equal to the counter
-        assert!(answers.len() == question.ans_counter as usize);        
+        assert!(ctx.remaining_accounts.len() == question.ans_counter as usize);
 
-        // Need to loop over answer indexes of the given question        
-        for (idx, answer) in answers.iter().enumerate() {      
+
+        // Need to loop over answer indexes of the given question
+        for (idx, answer) in ctx.remaining_accounts.iter().enumerate() {      
 
             // Check that the PDA match
             let (pda_answer, _bump) = Pubkey::find_program_address(&[question.key().as_ref(), &[idx as u8]], &ctx.program_id);                        
