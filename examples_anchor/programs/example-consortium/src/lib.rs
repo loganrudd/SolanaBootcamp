@@ -1,9 +1,9 @@
 use anchor_lang::prelude::*;
 
-declare_id!("BG8eNGD8vvPpegz6NojiFS2n6yPHV5yt9LJngp1QCkFf");
+declare_id!("536gqYtnehQGUmoNs1vx9JfUDAkZi2fZwGQTgoJw98Rp");
 
 #[program]
-mod example3 {
+mod example_consortium {
     use super::*;       
 
     // Creates a PDA for the consortium

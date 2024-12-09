@@ -13,13 +13,13 @@ wallet = "~/.config/solana/id.json"
 ## AGAIN
 
 [programs.localnet]
-example1 = "EnNAUhQEdDNtNszfguvK5RSkSLDStPLtUqeLpbjayoNq" 
-example2 = "5521eQoUE17iVGZXCwwGApaF6qExq2hkYVviETpfaXQE"
-example3 = "BG8eNGD8vvPpegz6NojiFS2n6yPHV5yt9LJngp1QCkFf"
+example_lottery = "HeF9ezjTNNgjw3QYrsVkTXvBSyzMn4wFZyDppe7wUsJW" 
+example_rps = "4DC2PDZrgD44bsi9zKRpxsX4nYzS5pxJAMCr7XbseMLv"
+example_consortium = "536gqYtnehQGUmoNs1vx9JfUDAkZi2fZwGQTgoJw98Rp"
 
 [scripts]
 test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
-test1 = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/test_example1_lottery.ts"
-test2 = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/test_example2_rps.ts"
-test3 = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/test_example3_consortium.ts"
+test1 = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/test_example_lottery.ts"
+test2 = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/test_example_rps.ts"
+test3 = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/test_example_consortium.ts"
 

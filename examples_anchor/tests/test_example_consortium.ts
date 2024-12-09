@@ -1,10 +1,10 @@
 import assert from "assert";
 import { expect } from "chai";
-import * as anchor from "@project-serum/anchor";
-import { Example3 } from "../target/types/example3";
+import * as anchor from "@coral-xyz/anchor";
+import { ExampleConsortium } from "../target/types/example_consortium";
 const { SystemProgram } = anchor.web3;
 
-describe("Tests for example3-consortium", async () => {
+describe("Tests for example-consortium", async () => {
   const provider = anchor.AnchorProvider.local();
   const LAMPORTS_PER_SOL = 1000000000;
 
@@ -20,7 +20,7 @@ describe("Tests for example3-consortium", async () => {
   const memberScammer = anchor.web3.Keypair.generate();
 
   // Get program IDL for rock-paper-scissor
-  const program = anchor.workspace.Example3 as anchor.Program<Example3>;
+  const program = anchor.workspace.ExampleConsortium as anchor.Program<ExampleConsortium>;
 
   // Global addresses for easy loading to subsequent tests
   let bump;

@@ -1,16 +1,16 @@
 import { expect } from "chai";
-import * as anchor from "@project-serum/anchor";
-import { Program } from "@project-serum/anchor";
-import { Example2 } from "../target/types/example2";
+import * as anchor from "@coral-xyz/anchor";
+import { Program } from "@coral-xyz/anchor";
+import { ExampleRpc } from "../target/types/example_rpc";
 
 const { SystemProgram } = anchor.web3;
 import { sha256 } from "js-sha256";
 
-describe("Tests for example2-rps", async () => {
+describe("Tests for example-rps", async () => {
   // Get handles
   const provider = anchor.AnchorProvider.env();
   anchor.setProvider(provider);
-  const program = anchor.workspace.Example2 as Program<Example2>;
+  const program = anchor.workspace.ExampleRpc as Program<ExampleRpc>;
   const LAMPORTS_PER_SOL = 1000000000;
 
   // Account address generated here

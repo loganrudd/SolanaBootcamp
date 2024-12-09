@@ -1,10 +1,10 @@
 import assert from "assert";
 import { expect } from "chai";
-import * as anchor from "@project-serum/anchor";
-import { Example1 } from "../target/types/example1";
+import * as anchor from "@coral-xyz/anchor";
+import { ExampleLottery } from "../target/types/example_lottery";
 const { SystemProgram } = anchor.web3;
 
-describe("Tests for example1-lottery", async () => {
+describe("Tests for example-lottery", async () => {
   const provider = anchor.AnchorProvider.local();
   anchor.setProvider(anchor.AnchorProvider.local());
 
@@ -19,7 +19,7 @@ describe("Tests for example1-lottery", async () => {
   const oracle = anchor.web3.Keypair.generate();
 
   // Get program IDL for rock-paper-scissor
-  const program = anchor.workspace.Example1 as anchor.Program<Example1>;
+  const program = anchor.workspace.ExampleLottery as anchor.Program<ExampleLottery>;
 
   before(async () => {
     // Top up all acounts that will need lamports for account creation

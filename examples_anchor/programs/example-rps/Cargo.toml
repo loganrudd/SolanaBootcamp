@@ -1,14 +1,15 @@
 [package]
-name = "example3"
+name = "example_rps"
 version = "0.1.0"
 description = "Created with Anchor"
 edition = "2018"
 
 [lib]
 crate-type = ["cdylib", "lib"]
-name = "example3"
+name = "example_rps"
 
 [features]
+idl-build = ["anchor-lang/idl-build"]
 no-entrypoint = []
 no-idl = []
 no-log-ix-name = []
@@ -16,5 +17,7 @@ cpi = ["no-entrypoint"]
 default = []
 
 [dependencies]
-anchor-lang = "0.24.2"
+anchor-lang = "0.30.1"
+num-traits = "0.2"
+num-derive = "0.3"
 
